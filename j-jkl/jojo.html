@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">w
+    <meta name="viewport" content="c:\Users\Aluno\Desktop\a.a.a\calculator.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+
+<body>
+    
+   <center>
+        
+      
+        <button style="padding: 43px 30px; font-size: 18px;">calculator
+    <input type="text" id="tela" readonly>
+
+    <br><br> <input type="button" value="1" onclick="adicionar ('1')"> 
+    <input type="button" value="2" onclick="adicionar ('2')">
+    <input type="button" value="3" onclick="adicionar ('3')">
+    <input type="button" value="4" onclick="adicionar ('4')">
+    <input type="button" value="5" onclick="adicionar ('5')">
+    <input type="button" value="ok" onclick="calcular ('ok')"> <br><br>
+    <input type="button" value="6" onclick="adicionar ('6')">
+    <input type="button" value="7" onclick="adicionar ('7')">
+    <input type="button" value="8" onclick="adicionar ('8')">
+    <input type="button" value="9" onclick="adicionar ('9')">
+    <input type="button" value="+" onclick="adicionar ('+')">
+    <input type="button" value="c" onclick="limpar()">
+    </button>
+    </div>
+    </center>
+
+    <script>
+        function adicionar (valor){
+            document.getElementById("tela").value += valor;
+        }
+ function calcular (){
+           let tela = document.getElementById("tela");
+
+        tela.value = eval(tela.value);
+ }
+
+ function limpar() {
+    document.getElementById("tela").value = "";
+}
+    </script>
+
+<img src="sua-imagem.png" alt="c:\Users\Aluno\Pictures\Saved Pictures\a.webp">
+</body>
+</html>

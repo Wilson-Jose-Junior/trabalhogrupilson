@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pegue o Quadrado</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111827;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    margin-top:20px;
+}
+
+#game{
+    width:90vw;
+    height:70vh;
+    margin:20px auto;
+    border:3px solid white;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+#target{
+    width:60px;
+    height:60px;
+    background:#22c55e;
+    position:absolute;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.1s;
+}
+
+#score{
+    font-size:24px;
+}
+</style>
+</head>
+<body>
+
+<h1>🎮 Pegue o Quadrado!</h1>
+<p id="score">Pontos: 0</p>
+
+<div id="game">
+    <div id="target"></div>
+</div>
+
+<script>
+const target = document.getElementById("target");
+const game = document.getElementById("game");
+const scoreText = document.getElementById("score");
+
+let score = 0;
+
+function moveTarget() {
+    const maxX = game.clientWidth - 60;
+    const maxY = game.clientHeight - 60;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    target.style.left = x + "px";
+    target.style.top = y + "px";
+}
+
+target.addEventListener("click", () => {
+    score++;
+    scoreText.textContent = "Pontos: " + score;
+    moveTarget();
+});
+
+moveTarget();
+
+// Move sozinho a cada segundo
+setInterval(moveTarget, 1000);
+</script>
+
+</body>
+</html>
